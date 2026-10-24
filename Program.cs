@@ -1,64 +1,39 @@
-﻿// Displays the required welcome message to the user.
-Console.WriteLine("Welcome to Package Express. Please follow the instructions below.");
+using System; // Provides access to Console input and output.
 
-// Asks the user to enter the package weight.
-Console.WriteLine("Please enter the package weight:");
-
-// Reads the package weight and converts the input from text to a decimal number.
-decimal weight = Convert.ToDecimal(Console.ReadLine());
-
-// Checks whether the package weight is greater than 50.
-if (weight > 50)
+namespace CSharpMethodAssignment // Groups the classes in this application.
 {
-    // Displays the required error message when the package is too heavy.
-    Console.WriteLine("Package too heavy to be shipped via Package Express. Have a good day.");
+    public class Calculator // Defines a class that performs a calculation.
+    {
+        // Defines a void method that accepts two integer parameters.
+        public void PerformCalculation(int firstNumber, int secondNumber)
+        {
+            // Multiplies the first number by 2 and stores the answer.
+            int result = firstNumber * 2;
 
-    // Stops the program because the package cannot be shipped.
-    return;
+            // Displays the result of the calculation.
+            Console.WriteLine("First number multiplied by 2: " + result);
+
+            // Displays the second number passed to the method.
+            Console.WriteLine("Second number: " + secondNumber);
+        }
+    }
+
+    internal class Program // Contains the entry point for the application.
+    {
+        // Main is the method that runs first when the application starts.
+        static void Main(string[] args)
+        {
+            // Creates an object (instance) of the Calculator class.
+            Calculator calculator = new Calculator();
+
+            // Calls the method using positional arguments.
+            calculator.PerformCalculation(5, 10);
+
+            // Calls the same method using named arguments.
+            calculator.PerformCalculation(firstNumber: 7, secondNumber: 20);
+
+            // Waits for a key press so the console window can stay open.
+            Console.ReadKey();
+        }
+    }
 }
-
-// Asks the user to enter the package width.
-Console.WriteLine("Please enter the package width:");
-
-// Reads the package width and converts the input to a decimal number.
-decimal width = Convert.ToDecimal(Console.ReadLine());
-
-// Asks the user to enter the package height.
-Console.WriteLine("Please enter the package height:");
-
-// Reads the package height and converts the input to a decimal number.
-decimal height = Convert.ToDecimal(Console.ReadLine());
-
-// Asks the user to enter the package length.
-Console.WriteLine("Please enter the package length:");
-
-// Reads the package length and converts the input to a decimal number.
-decimal length = Convert.ToDecimal(Console.ReadLine());
-
-// Adds the width, height, and length together to find the total package dimensions.
-decimal totalDimensions = width + height + length;
-
-// Checks whether the total dimensions are greater than 50.
-if (totalDimensions > 50)
-{
-    // Displays the required error message when the package is too large.
-    Console.WriteLine("Package too big to be shipped via Package Express.");
-
-    // Stops the program because the package cannot be shipped.
-    return;
-}
-
-// Multiplies the height, width, and length to calculate the package volume.
-decimal volume = height * width * length;
-
-// Multiplies the package volume by the package weight.
-decimal shippingTotal = volume * weight;
-
-// Divides the shipping calculation by 100 to determine the shipping quote.
-decimal shippingQuote = shippingTotal / 100;
-
-// Displays the shipping quote with a dollar sign and exactly two decimal places.
-Console.WriteLine($"Your estimated total for shipping this package is: ${shippingQuote:F2}");
-
-// Displays the required thank-you message.
-Console.WriteLine("Thank you!");
