@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- Builds this project as a console application. -->
+    <OutputType>Exe</OutputType>
+    <!-- Targets a current long-term-support .NET version. -->
+    <TargetFramework>net8.0</TargetFramework>
+    <!-- Enables implicit using directives where applicable. -->
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Enables nullable reference type analysis. -->
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+</Project>

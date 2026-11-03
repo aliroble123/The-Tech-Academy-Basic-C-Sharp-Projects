@@ -1,21 +1,21 @@
-# C# Method Assignment
+# IQuittable Interface and Polymorphism Assignment
 
-## What this project demonstrates
-- A `Calculator` class.
-- A `void` method with two integer parameters.
-- A math operation performed on the first integer.
-- Displaying the second integer.
-- Creating an object in `Main()`.
-- Calling the method with positional arguments and named arguments.
-- Comments explaining the code.
+## Purpose
+This C# console application demonstrates:
+1. An `IQuittable` interface with a `void Quit()` method.
+2. An `Employee` class that implements `IQuittable`.
+3. Polymorphism by assigning an `Employee` object to an `IQuittable` variable and calling `Quit()` through that interface reference.
+4. Comments throughout `Program.cs` explaining the code.
+
+## Run the application
+Install the .NET 8 SDK, open a terminal in this folder, and run:
+
+```bash
+dotnet run
+```
 
 ## Expected output
 ```text
-First number multiplied by 2: 10
-Second number: 10
-First number multiplied by 2: 14
-Second number: 20
+Ali Roble has quit.
+Press Enter to exit.
 ```
-
-## Run
-Open this folder in Visual Studio, or run `dotnet run` from this folder if the .NET SDK is installed.
