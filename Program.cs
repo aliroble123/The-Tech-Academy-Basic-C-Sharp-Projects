@@ -1,54 +1,47 @@
-using System; // Provides access to Console input and output.
+using System;
 
-// Declares an interface that represents an object that can quit.
-public interface IQuittable
+// Contains the entry point and demonstration code for the console application.
+class Program
 {
-    // Declares the Quit method; implementing classes must provide its behavior.
-    void Quit();
-}
-
-// Declares the Employee class and requires it to implement IQuittable.
-public class Employee : IQuittable
-{
-    // Stores the employee's first name.
-    public string FirstName { get; set; }
-
-    // Stores the employee's last name.
-    public string LastName { get; set; }
-
-    // Initializes a new Employee with the supplied first and last names.
-    public Employee(string firstName, string lastName)
+    // Main is the method that runs when the application starts.
+    static void Main(string[] args)
     {
-        // Saves the supplied first name in the FirstName property.
-        FirstName = firstName;
+        // Create the first Employee object.
+        Employee employee1 = new Employee();
 
-        // Saves the supplied last name in the LastName property.
-        LastName = lastName;
-    }
+        // Set the first employee's ID and name properties.
+        employee1.Id = 101;
+        employee1.FirstName = "Ali";
+        employee1.LastName = "Roble";
 
-    // Implements the Quit method required by the IQuittable interface.
-    public void Quit()
-    {
-        // Prints a message to confirm that this employee has quit.
-        Console.WriteLine($"{FirstName} {LastName} has quit.");
-    }
-}
+        // Create the second Employee object.
+        Employee employee2 = new Employee();
 
-// Declares the application's entry-point class.
-internal class Program
-{
-    // The Main method is where the console application starts running.
-    private static void Main(string[] args)
-    {
-        // Creates an Employee object but stores its reference in an IQuittable variable.
-        // This is polymorphism: an interface reference points to an implementing class object.
-        IQuittable employee = new Employee("Ali", "Roble");
+        // Set the second employee's ID and name properties.
+        // The names are different, but the ID matches employee1.
+        employee2.Id = 101;
+        employee2.FirstName = "Ahmed";
+        employee2.LastName = "Hassan";
 
-        // Calls the Employee implementation of Quit through the interface reference.
-        employee.Quit();
+        // Print the first employee's information to the console.
+        Console.WriteLine("First Employee:");
+        Console.WriteLine("ID: " + employee1.Id);
+        Console.WriteLine("First Name: " + employee1.FirstName);
+        Console.WriteLine("Last Name: " + employee1.LastName);
 
-        // Waits for the user to press Enter so the console window stays open.
-        Console.WriteLine("Press Enter to exit.");
+        // Print the second employee's information to the console.
+        Console.WriteLine("\nSecond Employee:");
+        Console.WriteLine("ID: " + employee2.Id);
+        Console.WriteLine("First Name: " + employee2.FirstName);
+        Console.WriteLine("Last Name: " + employee2.LastName);
+
+        // Use the overloaded == operator to compare the employee IDs.
+        Console.WriteLine("\nAre employees equal? " + (employee1 == employee2));
+
+        // Use the overloaded != operator to check whether the IDs differ.
+        Console.WriteLine("Are employees different? " + (employee1 != employee2));
+
+        // Wait for Enter so the console window remains open after displaying results.
         Console.ReadLine();
     }
 }
