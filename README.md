@@ -1,11 +1,36 @@
-# Employee Operator Overloading
+C# Projects – The Tech Academy
+Welcome to my C# Projects repository. This repository contains assignments and projects I completed while studying C# programming and .NET development at The Tech Academy.
 
-A C# console application demonstrating overloaded `==` and `!=` operators for comparing Employee objects by their `Id` property.
+Projects
+1. C# Method Assignment
+A C# project created to practice writing and using methods in a console application.
 
-## Run
+Skills: C#, methods, parameters, and programming logic.
 
-Install the .NET 8 SDK, open a terminal in this folder, and run:
+2. Employee Operator Overloading
+A C# console application demonstrating operator overloading. It uses the == and != operators to compare Employee objects by their Id property.
 
-```bash
-dotnet run
-```
+Skills: C#, classes, objects, properties, and operator overloading.
+
+3. IQuittable Assignment
+A C# assignment demonstrating the use of an interface and implementing its method in a class.
+
+Skills: C#, interfaces, classes, and object-oriented programming.
+
+Technologies Used
+C#
+.NET
+Visual Studio
+Git
+GitHub
+Skills Developed
+Object-Oriented Programming (OOP)
+Classes and objects
+Methods and parameters
+Interfaces
+Operator overloading
+C# programming logic
+Building console applications
+Version control with Git and GitHub
+Author
+Ali Roble
